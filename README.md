@@ -69,7 +69,12 @@ we run the ./experiments/results/fig_PrivacyPerAttackers/script_PlotMinPrivacyRa
 
 4. [Figure 8](./experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta): This experiment studies how the selected addresses of the
 random point and the target are distributed across the selection interval. To execute the experiment we run the ./experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta/script_PlotDistancesNormalizedByDelta.m
-script that loads a mat file aquird by runing the script_ExecuteIris.m script. The script plots the distances as histograms normalised by δ and saves them into two csv files. 
+script that loads a mat file aquird by runing the script_ExecuteIris.m script. The script plots the distances as histograms normalised by δ and saves them into two csv files.
+
+5. [Figure 9](./experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta): This experiments studies the attackers advantage by calculating
+the probabilities to for the target to have a specific value by knowing the random point that is picked by Iris. The probabilities are calculated and plotted
+by running the matlab scrip experiments/results/fig_Probabilities/fig_ConditionalProbabilities/script_PlotProbabilities.m on the two csv files that were
+generated in the previous experiment.
 
 **Order of Execution**: The exepriments are independent, thus, the scripts can be run following a different order from the
 one presented in the paper.
