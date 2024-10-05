@@ -58,9 +58,14 @@ the number of the performed experiments (lines 9-18) and the number of participa
    The Chord distance data are aquired by executing the script_ExecuteChord script, running the last command presented in the above section.
    The script in experiments/results/fig_DistancesPerAlpha/script_PlotDistancesPerAlpha.m, plots in matlab the dist data on the same figure.
 
-2. [Figure 6b](experiments/results/fig_DistancesPerDelta): This exepriment follows the same logic with experiment presented above, 
+2. [Figure 6b](./experiments/results/fig_DistancesPerDelta): This exepriment follows the same logic with experiment presented above, 
 however, in this case we alter the δ parameter between the Iris executions.
 
+3. [Figure 7](./experiments/results/fig_PrivacyPerAttackers): This exepriment follows the same logic with the two experiments presented above, 
+however, in this case we alter the f parameter, which controls the fraction of colluding adversaries, between the Iris executions.
+To find the minimum privacy ratio we get on every step across different executions,
+we run the ./experiments/results/fig_PrivacyPerAttackers/script_FindMinPrivacyRatio.m script, to plot the data on one figure in matlab
+we run the ./experiments/results/fig_PrivacyPerAttackers/script_PlotMinPrivacyRatioPerAttackers.m script.
 
 **Order of Execution**: The exepriments are independent, thus, the scripts can be run following a different order from the
 one presented in the paper.
