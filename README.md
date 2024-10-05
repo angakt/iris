@@ -67,5 +67,9 @@ To find the minimum privacy ratio we get on every step across different executio
 we run the ./experiments/results/fig_PrivacyPerAttackers/script_FindMinPrivacyRatio.m script, to plot the data on one figure in matlab
 we run the ./experiments/results/fig_PrivacyPerAttackers/script_PlotMinPrivacyRatioPerAttackers.m script.
 
+4. [Figure 8](./experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta): This experiment studies how the selected addresses of the
+random point and the target are distributed across the selection interval. To execute the experiment we run the ./experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta/script_PlotDistancesNormalizedByDelta.m
+script that loads a mat file aquird by runing the script_ExecuteIris.m script. The script plots the distances as histograms normalised by δ and saves them into two csv files. 
+
 **Order of Execution**: The exepriments are independent, thus, the scripts can be run following a different order from the
 one presented in the paper.
