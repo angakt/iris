@@ -46,12 +46,15 @@ the number of the performed experiments (lines 9-18) and the number of participa
 
  1. [Figure 6a](./experiments/results/fig_DistancesPerAlpha): For this experiment we execute Iris examining its performance for different values intially for the α parameter. To achieve that we run
  script_ExecuteIris.m setting at line 34 the α parameter equal to {0.25, 0.35, 0.5, 0.75}. In this experiment we study the convergence
- to the target , thus, we focus on the dist_N2Op variable. To save the distance data from every set of experiments we can run the command:
- **Save Distance Data:**
+ to the target, thus, we focus on the dist_N2Op variable. To save the distance data from every set of experiments we can run the command:
+ 
    ```bash
-   # isolate the distance data from the mat file
+   # when using octave
    csvwrite("data_a1.csv", dist_N2Op)
+   # when using matlab
+   writematrix(dist_N2Op,['data_a1.csv'])
    ```
+
    The Chord distance data are aquired by executing the script_ExecuteChord script, running the last command presented in the above section.
    The script in experiments/results/fig_DistancesPerAlpha/script_PlotDistancesPerAlpha.m, plots in matlab the dist data on the same figure.
 
