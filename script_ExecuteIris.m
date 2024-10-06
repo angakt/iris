@@ -1,60 +1,60 @@
-% The script runs ii the Iris algorithm and saves the execution data to a file. 
-% Between execution the alpha and delta parameters and attackers' fraction remain stable
-% but the id_space, the requester node N_r and the target addres O_p change.
-% N_r and O_p are chosen uniformly at random from the registered nodes and the id_space, respectiverly.
+% The script runs ii the Iris algorithm and saves the execution data in a file.
+% Between execution the alpha and delta parameters, and the fraction of attackers remain stable
+% but the id_space, the requester node (N_r) and the target address (O_p) change.
+% N_r and O_p are chosen uniformly at random from the registered nodes and the id_space, respectively.
 
 clear;
 clc;
 
-dist_N2Op = zeros(500,100);
-dist_N2Ir = zeros(500,100);
-priv_data = zeros(500,100);
-ub_data = zeros(500,100);
-addresses_of_nodes = zeros(500,100);
-addresses_of_objects = zeros(500,100);
-random_points = zeros(500,100);
-targets = zeros(500,1);
+% For every experiment we use another id space,
+% thus, make sure you have this number of different
+% id spaces saved in your folder.
+number_of_experiments = 5;
 
-for ii=1:500
+dist_N2Op = zeros(number_of_experiments,100);
+dist_N2Ir = zeros(number_of_experiments,100);
+priv_data = zeros(number_of_experiments,100);
+ub_data = zeros(number_of_experiments,100);
+addresses_of_nodes = zeros(number_of_experiments,100);
+addresses_of_objects = zeros(number_of_experiments,100);
+random_points = zeros(number_of_experiments,100);
+targets = zeros(number_of_experiments,1);
 
-    % Load the variables of the id_space
-    number_of_nodes=1000;
-    % file_number= jj*number_of_nodes;
+for ii=1:number_of_experiments
 
-    % For linux
-    % load(['experiments/2nd round/' num2str(file_number) '_nodes.mat'])
-    % For windows
-    % load(['experiments\2nd round\' num2str(file_number) '_nodes.mat'])
-    load(['experiments\networks\' num2str(number_of_nodes) '_nodes\AddressSpace' num2str(ii) '.mat'])
+    %% Load the variables of the id_space
+    % Chose the below two variables based on the
+    % id spaces created with the script_CreateIdSpaces.m file
+    number_of_nodes = 1000;
+    length_of_IdSpace = 23;
+
+    % For Windows
+    % load(['experiments\networks\' num2str(number_of_nodes) '_nodes\AddressSpace' num2str(ii) '.mat'])
+    % For Linux
+    load(['experiments/networks/' num2str(number_of_nodes) '_nodes/AddressSpace' num2str(ii) '.mat'])
     msg_0 = [newline '%%% Done loading file ', num2str(ii), ' %%%'];
     disp(msg_0)
     disp(' ');
 
-    % alpha = 0;
+	% alpha \in [0,1)
+	% For the experiments we have chosen the following
+	% values: 0.25, 0.35, 0.5, 0.75
     alpha = 0.25;
-    % alpha = 0.35;
-    % alpha = 0.50;
-    % alpha = 0.75;
 
-    % delta = 2^23/4;
-    % delta = 2^23/8;
-    % delta = 2^23/16;
-    % delta = 2^23/32;
-    delta = 2^23/64;
-    % delta = 2^23/128;
-    % delta = 2^23/256;
-    % delta = 2^23/512;
-    % delta = 2^23/1024;
-    % delta = 2^23/2048;
-    % delta = 2^23/4096;
-    % delta = 2^23/8192;
-    % delta = 2^23/16384;
+	% delta \in [1,2^length_of_IdSpace]
+	% For the experiments we have chosen the following
+	% fractions: 1/4, 1/8, 1/16, 1/32, 1/64, 1/128
+    delta = 2^length_of_IdSpace/16;
 
-    % We have f0,f12,f13,f16,f18
-    mal_nodes=attackers(5,:);
+    % The mat files of the id spaces saves
+    % the attackers in the attackers variable every row
+    % of which has the attackers of a specific fraction:
+    % 0, 1/2, 1/3, 1/6, 1/8
+    mal_nodes=attackers(1,:);
 
     % for ii=1:100
 
+	% The requester is chosen randomly among the participating nodes
     N_r = nodes(randi(numel(nodes)));
     % Check that the requester is not one of the colluding nodes
     while ismember(N_r, mal_nodes)==1
@@ -62,8 +62,11 @@ for ii=1:500
       % disp(msg)
       N_r = nodes(randi(numel(nodes)));
     end
-    % N_r = nodes(1,1); % We can position the requester as the first node in the net without loss of generality
-        
+
+    % As the networks are different the requester could be
+    % the first node in the network without loss of generality, but why not :)
+	% N_r = nodes(1,1);
+
     % The distance the requester assumes between nodes
     ind = find(dist_nodes==N_r,1);
     d_nodes = dist_nodes(ind,4);
@@ -76,7 +79,7 @@ for ii=1:500
     a = 1;
     b = 2^m;
     O_p = round(a + (b-a).*rand(1,1));
-    
+
     % % To test probabilities
     % O_p = Checking_Target(delta, nodes, m);
 
@@ -87,7 +90,7 @@ for ii=1:500
     % elseif isempty(index_resp_node) == 1
     %     resp_node = nodes(1);
     % end
-    % 
+    %
     % while ismember(resp_node, mal_nodes)==1
     %     % msg = 'We chose another Op';
     %     % disp(msg)
@@ -101,11 +104,11 @@ for ii=1:500
     % end
 
     targets(ii,1)=O_p;
-    
+
     msg_1 = ['N_r=', num2str(N_r), ' searches for O_p=', num2str(O_p), ' with alpha=', num2str(alpha),' and delta=', num2str(delta),'.'];
     disp(msg_1)
     disp(' ');
-    
+
     [N_t, hops_dist, hops_priv, upper_bounds, random_dist, node_addresses, object_addresses, random_addresses]=Iris(nodes, N_r, O_p, delta, alpha, routing_tables, m, n_nodes, d_nodes, mal_nodes);
     dist_N2Op(ii,:)=hops_dist;
     priv_data(ii,:)=hops_priv;
@@ -118,10 +121,17 @@ end
 
     keepvars = {'targets','addresses_of_nodes','addresses_of_objects','random_points','dist_N2Op','dist_N2Ir','priv_data','ub_data'};
     clearvars('-except', keepvars{:});
-    save('test_exp500_n1000_a025_d64_att18.mat','') 
 
-%     keepvars = {'file_number','dist_data','priv_data','ub_data'};
-%     clearvars('-except', keepvars{:});
-%     writematrix(dist_data,['spaces/data_a1_' num2str(file_number) '.csv'])
-%     writematrix(dist_N2Op,['data_a1.csv'])
+    % Define the name of the file to save the variables of the experiments
+    % For our files we follow the convention 'test_expA_nB_aC_dD_attE.mat' where:
+    % A: the number of experiments executed,
+    % B: the number of participating nodes in the network
+    % C/D: the alpha and delta value used
+    % E: the fraction of colluding nodes
+    save('test_exp100_n1000_a025_d116_att00.mat')
+
+  	% when using Octave
+  	 csvwrite("data_a1.csv", dist_N2Op)
+  	% when using Matlab
+  	% writematrix(dist_N2Op,['data_a1.csv'])
 % end
