@@ -44,7 +44,7 @@ we need to execute the script_ExecuteIris.m script. This script includes some ha
 the α (line 34) and the δ (line 43) parameters, the fraction of malicious nodes (line 54),
 the number of the performed experiments (lines 9-18) and the number of participating nodes in the network (line 21).
 
- 1. [Figure 6a](./experiments/results/fig_DistancesPerAlpha): For this experiment we execute Iris examining its performance for different values intially for the α parameter. To achieve that we run
+ 1. [Figure 6a](experiments/results/fig_DistancesPerAlpha/data/distances_per_alpha.pdf): For this experiment we execute Iris examining its performance for different values intially for the α parameter. To achieve that we run
  script_ExecuteIris.m setting at line 34 the α parameter equal to {0.25, 0.35, 0.5, 0.75}. In this experiment we study the convergence
  to the target, thus, we focus on the dist_N2Op variable. To save the distance data from every set of experiments we can run the command:
  
