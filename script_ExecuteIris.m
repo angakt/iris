@@ -9,7 +9,7 @@ clc;
 % For every experiment we use another id space,
 % thus, make sure you have this number of different
 % id spaces saved in your folder.
-number_of_experiments = 5;
+number_of_experiments = 100;
 
 dist_N2Op = zeros(number_of_experiments,100);
 dist_N2Ir = zeros(number_of_experiments,100);
@@ -131,7 +131,7 @@ end
     save('test_exp100_n1000_a025_d116_att00.mat')
 
   	% when using Octave
-  	 csvwrite("data_a1.csv", dist_N2Op)
+  	% csvwrite("data_a1.csv", dist_N2Op)
   	% when using Matlab
   	% writematrix(dist_N2Op,['data_a1.csv'])
 % end
