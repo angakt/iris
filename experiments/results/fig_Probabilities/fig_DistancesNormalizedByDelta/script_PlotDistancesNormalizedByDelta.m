@@ -44,7 +44,7 @@ xlabel('Distance');
 ylabel('Count');
 legend('o*100/UB','r*100/UB','Location','northeast')
 
-% R = data_R(not_zero_data_R);
-% writematrix(R,'data_R.csv')
-% O = data_O(not_zero_data_O);
-% writematrix(O,'data_O.csv')
+R = data_R(not_zero_data_R);
+writematrix(R,'data_R.csv')
+O = data_O(not_zero_data_O);
+writematrix(O,'data_O.csv')
