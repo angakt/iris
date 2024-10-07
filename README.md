@@ -1,5 +1,7 @@
 # Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks
 
+This repository contains the code and the data used in our paper, “Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks”. Initially, we provide the instructions to set up and run our code. We then elaborate further on the experiments we have performed.
+
 ## Code Instructions
 
 1. **Clone the Repository:**
