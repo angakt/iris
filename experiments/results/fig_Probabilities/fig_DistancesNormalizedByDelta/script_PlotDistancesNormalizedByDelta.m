@@ -5,7 +5,7 @@
 
 clear;
 clc;
-load('test_exp500_n1000_a075_d128_att00.mat');
+load('test_exp500_n1000_a075_d1128_att00.mat');
 m=23;
 n_exp = size(addresses_of_nodes,1);
 
@@ -45,6 +45,13 @@ ylabel('Count');
 legend('o*100/UB','r*100/UB','Location','northeast')
 
 R = data_R(not_zero_data_R);
-writematrix(R,'data_R.csv')
+%% when using Octave
+csvwrite('data_R.csv',R)
+%% when using Matlab
+% writematrix(R,'data_R.csv')
+
 O = data_O(not_zero_data_O);
-writematrix(O,'data_O.csv')
+%% when using Octave
+csvwrite(O,'data_O.csv')
+%% when using Matlab
+% writematrix(O,'data_O.csv')

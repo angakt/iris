@@ -1,6 +1,6 @@
 clc;
 clear;
-load('test_exp500_n1000_a075_d128_att00.mat');
+load('test_exp500_n1000_a075_d1128_att00.mat');
 
 writematrix(addresses_of_nodes,'nodeIDs.csv');
 writematrix(random_points,'randomIDs.csv');
