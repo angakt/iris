@@ -9,13 +9,13 @@ end
 % I_start = mod(O_p-delta,2^m);
 
 % Preallocating memory
-node_ids = zeros(1,100);
-object_ids = zeros(1,100);
-random_ids = zeros(1,100);
-distancesN2Op = zeros(1,100);
-distancesN2Ir = zeros(1,100);
-pr_values = zeros(1,100);
-UB_values = zeros(1,100);
+node_ids = zeros(1,500);
+object_ids = zeros(1,500);
+random_ids = zeros(1,500);
+distancesN2Op = zeros(1,500);
+distancesN2Ir = zeros(1,500);
+pr_values = zeros(1,500);
+UB_values = zeros(1,500);
 attacker_data = zeros(n_nodes,2);
 
 node_ids(1,1) = N_r;
