@@ -49,9 +49,9 @@ A GNU Octave docker image can be downloaded from [this](https://github.com/gnu-o
 
 ## Reproducibility Instructions
 
-Our code consists of five sets of experiments. For general instructions regarding the execution of the experiments, we refer the reader to Section D of the [Artifact Appendix](./AE_Appendix.pdf).
+Our code consists of five sets of experiments. For general instructions regarding the execution of the experiments, we refer the reader to Section D of the [Artifact Appendix](./AE_Appendix.pdf). Below, we provide an overview of the experiments performed. 
 
-Below, we provide an overview of the experiments performed. Detailed instructions for the reproducibility of the figures can be found in Section E of the [Artifact Appendix](./AE_Appendix.pdf).
+Detailed instructions for the reproducibility of the figures can be found in Section E of the [Artifact Appendix](./AE_Appendix.pdf).
 The plotting scripts are written in either Matlab or R. We include them for completeness but we do not consider them part of our contribution
 
  1. [Figure 6a](experiments/results/fig_DistancesPerAlpha/data/distances_per_alpha.pdf): For this experiment we execute Iris examining its performance for different values
