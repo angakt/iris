@@ -71,6 +71,8 @@ one presented in the paper. The experiment in Figure 9 uses the data generated b
 
 ## Citation
 
+If you use Iris or our code, please consider citing our paper.
+
 ```
 @InProceedings{aktypi2025iris,
   title={Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks},
