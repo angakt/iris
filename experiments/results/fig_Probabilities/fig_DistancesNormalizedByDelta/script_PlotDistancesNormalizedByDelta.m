@@ -52,6 +52,6 @@ csvwrite('data_R.csv',R)
 
 O = data_O(not_zero_data_O);
 %% when using Octave
-csvwrite(O,'data_O.csv')
+csvwrite('data_O.csv',O)
 %% when using Matlab
 % writematrix(O,'data_O.csv')
