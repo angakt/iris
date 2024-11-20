@@ -11,13 +11,13 @@ clc;
 % id spaces saved in your folder.
 number_of_experiments = 100;
 
-dist_N2Op = zeros(number_of_experiments,100);
-dist_N2Ir = zeros(number_of_experiments,100);
-priv_data = zeros(number_of_experiments,100);
-ub_data = zeros(number_of_experiments,100);
-addresses_of_nodes = zeros(number_of_experiments,100);
-addresses_of_objects = zeros(number_of_experiments,100);
-random_points = zeros(number_of_experiments,100);
+dist_N2Op = zeros(number_of_experiments,500);
+dist_N2Ir = zeros(number_of_experiments,500);
+priv_data = zeros(number_of_experiments,500);
+ub_data = zeros(number_of_experiments,500);
+addresses_of_nodes = zeros(number_of_experiments,500);
+addresses_of_objects = zeros(number_of_experiments,500);
+random_points = zeros(number_of_experiments,500);
 targets = zeros(number_of_experiments,1);
 
 for ii=1:number_of_experiments
