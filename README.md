@@ -92,10 +92,10 @@ If you use Iris or our code, please consider citing our paper.
   title = {Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks},
   author = {Aktypi, Angeliki and Rasmussen, Kasper},
   year = {2025},
-  booktitle = {Proceedings of the 32nd Annual Network and Distributed System Security Symposium (NDSS '25)},
-  isbn = {979-8-9894372-8-3},
-  keywords = {p2p; chord; privacy; authentication},
   month = {February},
+  booktitle = {Proceedings of the 32nd Annual Network and Distributed System Security Symposium},
+  series = {NDSS '25}
+  isbn = {979-8-9894372-8-3},
   doi = {10.14722/ndss.2025.240392},
 }
 ```
