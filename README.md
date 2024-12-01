@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14251874.svg)](https://doi.org/10.5281/zenodo.14251874)
+
 # Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks
 
 This repository contains the code and the data used in the paper *Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks*, published at the [NDSS Symposium 2025](https://www.ndss-symposium.org/ndss2025/). 
