@@ -32,6 +32,8 @@ A GNU Octave docker image can be downloaded from [this](https://github.com/gnu-o
     sudo apt install octave
     # to run octave cli
     octave
+    # to add the current directory to search path
+    addpath(genpath(pwd))
     ```
 3. **Create the Address Spaces:**
     ```bash
