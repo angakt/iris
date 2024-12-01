@@ -9,7 +9,7 @@ Any computer that can run Matlab or GNU Octave.
 For our implementation we use a computer with
 an Intel Core i7-4820K processor and 16 GB installed RAM memory.
 
-2. **Software Dependencies:**
+2. **OS & Software Dependencies:**
 The code can be executed on any operation system that supports Matlab or Octave, e.g., Windows, MacOS, or Ubuntu. 
 We test our code on Windows 10, Education edition, version 22H2,
 running the Matlab version R2023a with an academic licence.
