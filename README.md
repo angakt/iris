@@ -1,6 +1,8 @@
 # Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks
 
-This repository contains the code and the data used in the paper *Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks*, published at the [NDSS Symposium 2025](https://www.ndss-symposium.org/ndss2025/). Initially, we provide the instructions to set up and run our code. We then elaborate further on the experiments we have performed.
+This repository contains the code and the data used in the paper *Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks*, published at the [NDSS Symposium 2025](https://www.ndss-symposium.org/ndss2025/). 
+For the schema of the coding files and a brief description of the main scripts, we refer the reader to Section A of the [Artifact Appendix](./AE_Appendix.pdf).
+Here, we initially provide the instructions to set up and run our code. We then elaborate further on the experiments we have performed.
 
 ## Dependencies
 
