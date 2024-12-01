@@ -1,6 +1,6 @@
 # Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks
 
-This repository contains the code and the data used in our paper, “Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks”. Initially, we provide the instructions to set up and run our code. We then elaborate further on the experiments we have performed.
+This repository contains the code and the data used in the paper *Iris: Dynamic Privacy Preserving Search in Authenticated Chord Peer-to-Peer Networks* appear at [NDSS Symposium 2025](https://www.ndss-symposium.org/ndss2025/). Initially, we provide the instructions to set up and run our code. We then elaborate further on the experiments we have performed.
 
 ## Dependencies
 
@@ -53,9 +53,6 @@ A GNU Octave docker image can be downloaded from [this](https://github.com/gnu-o
 
 Our code consists of five sets of experiments. For general instructions regarding the execution of the experiments, we refer the reader to Section D of the [Artifact Appendix](./AE_Appendix.pdf). Below, we provide an overview of the experiments performed. 
 
-Detailed instructions for the reproducibility of the figures can be found in Section E of the [Artifact Appendix](./AE_Appendix.pdf).
-The plotting scripts are written in either Matlab or R. We include them for completeness but we do not consider them part of our contribution
-
  1. [Figure 6a](experiments/results/fig_DistancesPerAlpha/data/distances_per_alpha.pdf) [1 human-minute + 1 compute-minute]: For this experiment we execute Iris examining its performance for different values
 for the α parameter. To achieve that we run the script_ExecuteIris.m file, setting the α parameter equal to {0.25, 0.35, 0.5, 0.75}. In this experiment we study the convergence to the target, thus, we focus on the dist_N2Op variable. To compare Iris with the vanilla Chord, we need to execute the script_ExecuteChord script. The script loads the data of one of the previous executions of Iris (line 8), executes Chord for the same requester and target addresses and saves the distance data. The script in experiments/results/fig_DistancesPerAlpha/script_PlotDistancesPerAlpha.m, plots in matlab the dist data on the same figure.
 
@@ -80,6 +77,9 @@ one presented in the paper. The experiment in Figure 9 uses the data generated b
 
 2. For the experiments in Figures 7, 8 and 9 we alter IRIS so as to focus solely on the nodes that have a correct estimation regarding the target.
 Thus, we need to comment lines 27-31 and uncomment lines 35-40 in Iris.m file.
+
+>[!NOTE]
+>Detailed instructions for the reproducibility of the figures can be found in Section E of the [Artifact Appendix](./AE_Appendix.pdf). The plotting scripts are written in either Matlab or R. We include them for completeness but we do not consider them part of our contribution
 
 ## Citation
 
