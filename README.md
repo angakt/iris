@@ -10,7 +10,7 @@ For our implementation we use a computer with
 an Intel Core i7-4820K processor and 16 GB installed RAM memory.
 
 2. **Software Dependencies:**
-The provided code is written in Matlab.
+The code can be executed on any operation system that supports Matlab or Octave, e.g., Windows, MacOS, or Ubuntu. 
 We test our code on Windows 10, Education edition, version 22H2,
 running the Matlab version R2023a with an academic licence.
 However, as the code does not use any special libraries, GNU Octave,
@@ -18,6 +18,8 @@ an open-source alternative to Matlab, is also sufficient to run the scripts.
 A GNU Octave docker image can be downloaded from [this](https://github.com/gnu-octave/docker) link.
 
 ## Code Instructions
+
+Below, we provide the commands to run the code on a Linux-based machine.
 
 1. **Clone the Repository:**
    ```bash
