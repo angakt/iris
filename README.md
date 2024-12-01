@@ -56,19 +56,19 @@ Our code consists of five sets of experiments. For general instructions regardin
 Detailed instructions for the reproducibility of the figures can be found in Section E of the [Artifact Appendix](./AE_Appendix.pdf).
 The plotting scripts are written in either Matlab or R. We include them for completeness but we do not consider them part of our contribution
 
- 1. [Figure 6a](experiments/results/fig_DistancesPerAlpha/data/distances_per_alpha.pdf): For this experiment we execute Iris examining its performance for different values
+ 1. [Figure 6a](experiments/results/fig_DistancesPerAlpha/data/distances_per_alpha.pdf) [1 human-minute + 1 compute-minute]: For this experiment we execute Iris examining its performance for different values
 for the α parameter. To achieve that we run the script_ExecuteIris.m file, setting the α parameter equal to {0.25, 0.35, 0.5, 0.75}. In this experiment we study the convergence to the target, thus, we focus on the dist_N2Op variable. To compare Iris with the vanilla Chord, we need to execute the script_ExecuteChord script. The script loads the data of one of the previous executions of Iris (line 8), executes Chord for the same requester and target addresses and saves the distance data. The script in experiments/results/fig_DistancesPerAlpha/script_PlotDistancesPerAlpha.m, plots in matlab the dist data on the same figure.
 
-3. [Figure 6b](experiments/results/fig_DistancesPerDelta/data/distances_per_delta.pdf): This experiment follows the same logic with the experiment presented above, 
+3. [Figure 6b](experiments/results/fig_DistancesPerDelta/data/distances_per_delta.pdf) [1 human-minute + 1 compute-minute]: This experiment follows the same logic with the experiment presented above, 
 however, in this case we alter the δ parameter between the Iris executions.
 
-4. [Figure 7](experiments/results/fig_PrivacyPerAttackers/data/PrivacyPerAttackers.pdf): This exepriment follows the same logic with the two experiments presented above, 
+4. [Figure 7](experiments/results/fig_PrivacyPerAttackers/data/PrivacyPerAttackers.pdf) [1 human-minute + 5 compute-minute]: This exepriment follows the same logic with the two experiments presented above, 
 however, in this case we alter the f parameter, which controls the fraction of colluding adversaries, between the Iris executions. To find the minimum privacy ratio we get on every step across different executions, we run the ./experiments/results/fig_PrivacyPerAttackers/script_FindMinPrivacyRatio.m script. To plot the data on one figure in matlab we run the ./experiments/results/fig_PrivacyPerAttackers/script_PlotMinPrivacyRatioPerAttackers.m script.
 
-5. [Figure 8](experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta/data/histogram_or.pdf): This experiment studies how the selected addresses of the
+5. [Figure 8](experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta/data/histogram_or.pdf) [1 human-minute + 1 compute-minute]: This experiment studies how the selected addresses of the
 random point and the target are distributed across the selection interval. To execute the experiment we run the ./experiments/results/fig_Probabilities/fig_DistancesNormalizedByDelta/script_PlotDistancesNormalizedByDelta.m script that loads a mat file aquired by runing the script_ExecuteIris.m script. The script plots the distances as histograms normalised by δ and saves them into two csv files.
 
-6. [Figure 9](experiments/results/fig_Probabilities/fig_ConditionalProbabilities/data/P(O=35|R=x).pdf): This experiments studies the attackers advantage by calculating
+6. [Figure 9](experiments/results/fig_Probabilities/fig_ConditionalProbabilities/data/P(O=35|R=x).pdf) [1 human-minute + 1 compute-minute]: This experiments studies the attackers advantage by calculating
 the probabilities for the target to have a specific value by knowing the random point that is picked by Iris. The probabilities are calculated and plotted
 by running the matlab scrip experiments/results/fig_Probabilities/fig_ConditionalProbabilities/script_PlotProbabilities.m on the two csv files that were
 generated in the previous experiment.
